@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MarketAsur</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">MarketAsur</div>
+    <nav>
+      <a href="#" onclick="show('home')">Home</a>
+      <a href="#" onclick="show('history')">Histori</a>
+      <a href="#" id="navLogin" onclick="show('login')">Login</a>
+      <a href="#" id="navSignup" onclick="show('signup')">Sign Up</a>
+      <a href="#" id="navLogout" style="display:none" onclick="logout()">Logout</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="pageHome" class="page">
+      <h2>Produk Asuransi</h2>
+      <div class="card">
+        <h3>Asuransi MobilCom</h3>
+        <p>Perlindungan kerusakan & kehilangan mobil</p>
+        <button onclick="show('mobil')">Beli</button>
+      </div>
+      <div class="card">
+        <h3>Asuransi SehatPlus</h3>
+        <p>Proteksi kesehatan rawat inap & jalan</p>
+        <button onclick="show('kesehatan')">Beli</button>
+      </div>
+      <div class="card">
+        <h3>Asuransi JiwaTenang</h3>
+        <p>Santunan jiwa hingga 1 Milyar</p>
+        <button onclick="show('jiwa')">Beli</button>
+      </div>
+    </section>
+
+    <section id="pageLogin" class="page">
+      <h2>Login</h2>
+      <form onsubmit="login(event)">
+        <input type="email" id="lemail" placeholder="Email" required>
+        <input type="password" id="lpass" placeholder="Password" required>
+        <button>Login</button>
+      </form>
+      <div id="msgLogin"></div>
+    </section>
+
+    <section id="pageSignup" class="page">
+      <h2>Sign Up</h2>
+      <form onsubmit="signup(event)">
+        <input type="text" id="sname" placeholder="Nama" required>
+        <input type="email" id="semail" placeholder="Email" required>
+        <input type="password" id="spass" placeholder="Password (min 8)" required>
+        <button>Daftar</button>
+      </form>
+      <div id="msgSignup"></div>
+    </section>
+
+    <section id="pageHistory" class="page">
+      <h2>Histori</h2>
+      <div id="historyList"></div>
+    </section>
+
+    <section id="formMobil" class="page">
+      <h2>Pembelian Asuransi Mobil</h2>
+      <form id="formMobilInput">
+        <input type="text" id="merk" placeholder="Merk Mobil" required>
+        <input type="text" id="jenis" placeholder="Jenis Mobil" required>
+        <input type="number" id="tahun" placeholder="Tahun Pembuatan" required>
+        <input type="number" id="harga" placeholder="Harga Mobil" required>
+        <input type="text" id="plat" placeholder="Nomor Plat" required>
+        <input type="text" id="mesin" placeholder="Nomor Mesin" required>
+        <input type="text" id="rangka" placeholder="Nomor Rangka" required>
+        <input type="text" id="pemilik" placeholder="Nama Pemilik" required>
+        <input type="file" id="foto" accept="image/*" multiple onchange="previewFoto(event)">
+        <div id="preview"></div>
+        <button type="submit">Hitung Premi</button>
+      </form>
+    </section>
+
+    <section id="formKesehatan" class="page">
+      <h2>Pembelian Asuransi Kesehatan</h2>
+      <input id="umur" type="number" placeholder="Umur">
+      <select id="rokok">
+        <option value="0">Tidak Merokok</option>
+        <option value="1">Merokok</option>
+      </select>
+      <button onclick="calc('kesehatan')">Hitung Premi</button>
+    </section>
+
+    <section id="formJiwa" class="page">
+      <h2>Pembelian Asuransi Jiwa</h2>
+      <select id="t">
+        <option value="1000000000">Rp1M</option>
+        <option value="2000000000">Rp2M</option>
+      </select>
+      <button onclick="calc('jiwa')">Hitung Premi</button>
+    </section>
+
+    <section id="pagePremi" class="page">
+      <h2>Detail Premi</h2>
+      <div id="detailPremi"></div>
+      <button id="btnBayar" onclick="bayar()">Bayar</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 MarketAsur. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fff5f5;
+}
+
+header {
+  background: #b11226;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+nav a {
+  color: white;
+  margin-left: 15px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  padding: 20px;
+}
+
+footer {
+  background: #b11226;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.page {
+  display: none;
+}
+
+.card {
+  background: white;
+  padding: 15px;
+  border-radius: 5px;
+  margin: 10px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+input,
+select {
+  display: block;
+  margin: 8px 0;
+  padding: 8px;
+  width: 100%;
+  max-width: 400px;
+}
+
+button {
+  background: #b11226;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+#btnBayar {
+  background: #28a745;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+#btnBayar:hover {
+  background: #218838;
+}
+
+.success {
+  color: green;
+}
+
+.error {
+  color: red;
+}
+
+#preview img {
+  max-width: 100px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
